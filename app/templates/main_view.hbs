@@ -1,0 +1,17 @@
+<div class="hero-unit">
+  <h1>FOAAS Client</h1>
+  <p>A client for the <a href="http://foaas.com">FOAAS</a> service.</p>
+</div>
+<div class="container">
+	<h2>Generator</h2>
+
+	<div class="row">
+		<div class="span2">Operation</div><div class="span5">{{view "App.SelectControl" collectionObserveBinding="App.mainController.operations" valueBinding="App.mainController.current" idField="name"}}</div></div>
+	</div>
+
+	{{collection "App.OpfieldRowView" collectionObserveBinding="App.mainController.current.opfields" tag="div"}}
+
+	<strong>URL:</strong> {{view "App.LinkView" contentBinding="App.mainController.currentUrl" prefix="http://foaas.com" targetHtml="_blank"}}
+
+    <p class="muted"><em>This one <u>is</u> written in <a href="http://mozart.io">Mozart</a></em></p>
+</div>
